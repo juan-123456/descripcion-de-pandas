@@ -1,53 +1,53 @@
 # descripcion-de-pandas
 
-+ import pandas as pd: importa las librerias
++ import pandas as pd: import libraries
 
-+ url = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv' importa desde la url donde tengamos la
-tabla de datos o los datos
++ url = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv' matter from the url where we have the data table or data
 
++ tarea = pd.read_csv(url, sep = '\t' what is does is that the pd as a library uses it with the read to find the fastest or exact route where our file is from the url that we added before and then make a blank space that the rest is blank
++ tarea is shows me everything we have created or exported
++ tarea.head(10) the number we give is from 0 to the number that will show what is in the table
++ tarea.shape [0] what it does is read the vertical part bone shows the first column vertically from the beginning to the end
 
-+ tarea = pd.read_csv(url, sep = '\t' lo que hace es que el pd como libreria lo usa con el read para buscar la ruta mas rapida o exacta donde esta nuestro archivo desde la url que nosotros agregamos antes y despues haga un espacio en blanco que lo demas este en blanco
-+ tarea me muestra todo lo que hemos creado o exportado.
-+ tarea.head(10) el numero que poganmos es desde el 0 hasta el numero que mostrara lo que haya en la tabla.
-+ tarea.shape [0] lo que hace es leer la parte vertical osea muestra la primera columna de forma vertical desde el inicio al final
-+ tarea.shape [1] hace lo mismo de con 0 pero de forma horizontal
-+ tarea.info() nuestra informacion sobre los numeros de datos, lo tipos, las columnas, el orden, etc
-+ tarea.columns por lo que entendi simplemente te muestra lo que esta en horizontal osea las columnas de arriba que lo separan de su descripcion
-+ tarea.index por lo que entendi es el total de todos los datos que contiene 
++ tarea.shape [1] it does the same with 0 but horizontally
+
++ tarea.info() our information on data numbers, types, columns, order , etc
+
++ tarea.columns from what i understood, it simply shows you what is horizontal, the upper columns that separate ir from its description
+
++ tarea.index from what i understood is the total of call the data it contains
+
 c = chipo.groupby('item_name')
 c = c.sum()
 c = c.sort_values(['quantity'], ascending=False)
-c.head(1): este codigo por lo que entendi es que los datos que estan repeditos en esa columna se suman y se muestran como tabla.
+c.head(1): this code from what i understood is that the data that is reprinted in that column is added and shown as a table
 
 + c = chipo.groupby('choice_description').sum()
 c = c.sort_values(['quantity'], ascending=False)
-c.head(1):  aqui hace la misma funcion nada mas que de otras columnas 
+c.head(1):  here it does the dame function nothing more than other columns
 
 + total_items_orders = chipo.quantity.sum()
-+ total_items_orders: es el total de datos que hay.
++ total_items_orders: is the total data that there is
 
 
-+ chipo.item_price.dtype: lo que entendi es que muestra los dtype que tenga en esa columna
-
-+ tarea.item_price.str.slice(1) muestra del 0 a la 1 todas esas columnas desde horizontal y vertical
-
-+ tarea.item_price.dtype muestra el tipo de dato
++ chipo.item_price.dtype: what i understood is that it showsthe dtype that i have in that column
++ tarea.item_price.str.slice(1) show from 0 to 1 all those columns from horizontal and vertical
++ tarea.item_price.dtype show the type of data
 
 + orders = tarea.order_id.value_counts().count()
 orders: son los datos totales pero de esa columna en espesifico
-tarea['item_price'].sum(): la suma de los resultados de esa tabla
+tarea['item_price'].sum(): the sum od the results of that table
 
 
-+ chipo.item_price.dtype: el tipo de dato que es
++ chipo.item_price.dtype: the type od data that is
 
 + revenue = (chipo['quantity']* chipo['item_price']).sum()
-print('Revenue was: $' + str(np.round(revenue,2))) : por lo que entendi es que lo supa pero de forma total de toda la columna
+print('Revenue was: $' + str(np.round(revenue,2))) : from what i understood is that i knew it but in a total way of the whole column
 
 + chipo['revenue'] = chipo['quantity'] * chipo['item_price']
 order_grouped = chipo.groupby(by=['order_id']).sum()
-order_grouped.mean()['revenue'] muestra de la columna que se ponga el monto promedio que a habido por ingresos
+order_grouped.mean()['revenue'] sample of the column that puts the average amount that has been for income
 
-+ chipo.groupby(by=['order_id']).sum().mean()['revenue'] : y esta es la segunda forma de hacerlo.
++ chipo.groupby(by=['order_id']).sum().mean()['revenue'] : And this is the second way to do it.
 
-+ chipo.item_name.value_counts().count(): esta parte muestra los diferentes datos que se tiene agregados
-
++ chipo.item_name.value_counts().count(): this part shows the different data that has been added
