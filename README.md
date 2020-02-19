@@ -51,3 +51,5 @@ order_grouped.mean()['revenue'] sample of the column that puts the average amoun
 + chipo.groupby(by=['order_id']).sum().mean()['revenue'] : And this is the second way to do it.
 
 + chipo.item_name.value_counts().count(): this part shows the different data that has been added
+
+https://github.com/guipsamora/pandas_exercises/tree/master/01_Getting_%26_Knowing_Your_Data
